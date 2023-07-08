@@ -65,8 +65,8 @@ sayHi();
 4.
 
 ```js
-console.log(arr); // output
-console.log(username); // output
+console.log(arr); // output - [1, 2, 3, 4, 5, 6]
+console.log(username); // output - 'Sam'
 var usename = 'Sam';
 var arr = [1, 2, 3, 4, 5, 6];
 
@@ -74,3 +74,4 @@ function double(num) {
   return num * 2;
 }
 ```
+<!-- double is not called or executed -->
