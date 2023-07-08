@@ -12,7 +12,7 @@ function square(num) {
   return num * num;
 }
 let hundred = square(10);
-console.log(hundred);
+console.log(hundred); // output 100
 ```
 
 Create the execution context diagram of the following code line by line.
@@ -24,7 +24,7 @@ function addFive(n) {
 }
 var five = addFive(0);
 var ten = addFive(5);
-console.log(five, ten);
+console.log(five, ten); // output 5,10
 ```
 
 Create the execution context diagram of the following code line by line.
@@ -39,7 +39,7 @@ function multiplyArrayByN(arr, n) {
   return finalArr;
 }
 
-let numbers = multiplyArrayByN(marks);
+let numbers = multiplyArrayByN(marks); // number = [68,90,112,152];
 ```
 
 Create the execution context diagram of the following code line by line.
@@ -51,7 +51,7 @@ function counter(){
   funciton increment(){
     return count++;
   }
-  return increment()
+  return increment()  // counter = 0+1 = 1 now duw to declation function it is possible
 }
 ```
 
@@ -64,6 +64,6 @@ let counter = function () {
   function increment() {
     return count++;
   }
-  return increment();
+  return increment(); // undefined becuse function executed before defined and it is function expression
 };
 ```
