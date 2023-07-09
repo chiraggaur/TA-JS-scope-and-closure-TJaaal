@@ -33,9 +33,9 @@ if (true) {
 }
 console.log(username); // output
 ```
-In the above code we are looking for 'username'. It is not a global variable as it is declared with (let) inside if block scope but let will only follow function and block scope so we can access it from outside the block.
+In the above code we are looking for 'username'. It is not a global variable as it is declared with (const)inside block scope and we can't access it from outside the block.
 
- The above code will give output 'Arya'.
+ The above code will throw an error `Reference Error username is not defined`.
 
 4. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -69,11 +69,11 @@ let username = 'John';
 if (true) {
   let username = 'Arya';
 }
-console.log(username); // output - // error it is if scope 
+console.log(username); // output - John
 ```
-In the above code we are looking for 'username'. It is a global variable with let  also it is declared inside block scope but as it is declared with (let) inside block scope but as per rule let  follow function and block scope thats why we can't redeclared it with same name.
+In the above code username is declared with let but it is declared in global and block scope seprately which is allowed thats why we can acess the global scope only from outside the block and the output is John .
 
- The above code will throw an error `Uncaught SyntaxError: Identifier 'username' has already been declared`.
+
 
 7. Go through the code below and write down the process of making decision about looking for the variable. Also write the output of the code below.
 
@@ -83,7 +83,7 @@ function sayHello() {
   let username = 'Arya';
 }
 sayHello();
-console.log(username); // output - John  // doubt 
+console.log(username); // output - John  
 ```
 In the above code we are looking for 'username'. It is a global variable also it is declared inside with let inside function scope which is not accesible from outside.
 
@@ -110,6 +110,4 @@ for (let i = 0; i < 10; i++) {
 }
 console.log(i, 'Second'); // output
 ```
-In the above code we are looking for 'i'. It is declared with let in for loop and let only follow block and function block;
-
-It will give output first complete the for loop and then  at 10 it will exit loopn and console the value of i ie - 10 now;
+In  the above code i is dclared with let which follow block scope thats why ionly 0-9 , First will console and after the loop it will through error Reference Error i is not defined
