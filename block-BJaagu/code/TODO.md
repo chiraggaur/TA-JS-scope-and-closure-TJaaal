@@ -58,7 +58,7 @@ Find the output of the code snippets below:
 
 ```js
 let username = "Tyrion";
-sayHello(); // OUTPUT - Tyrion
+sayHello(); // OUTPUT - error - sayHello is not defined .
 let sayHello = () => {
   console.log(username);
 };
@@ -67,7 +67,7 @@ let sayHello = () => {
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT - VM47:3 Uncaught ReferenceError: Cannot access 'username' before initialization
+sayHello(); // OUTPUT - error - sayHello is not defined .
 let username = "Tyrion";
 let sayHello = () => {
   console.log(username);
@@ -77,7 +77,7 @@ let sayHello = () => {
 Find the output of the code snippets below:
 
 ```js
-sayHello(); // OUTPUT - undefined
+sayHello(); // OUTPUT - error 
 var username = "Tyrion";
 let sayHello = () => {
   console.log(username);
@@ -88,7 +88,7 @@ Find the output of the code snippets below:
 
 ```js
 var username = "Tyrion";
-sayHello(); // OUTPUT - Tyrion
+sayHello(); // OUTPUT - error
 let sayHello = () => {
   console.log(username);
 };
