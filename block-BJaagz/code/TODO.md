@@ -5,12 +5,17 @@
 - It should work exactly like array `forEach` method
 
 ```js
-function forEach() {}
+function forEach(num,cb) {
+   num.reduce((acc,cv)=> {
+        
+   },initialvalue);
+}
 
 forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
   console.log(name + name, i, arr)
 );
 ```
+
 
 2. Implement `map` array method using Array.reduce
 
@@ -19,11 +24,18 @@ forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
 - It should work exactly like array `map` method
 
 ```js
-function map() {
+function map(array,cb) {
   // Your code goes here
+  let initialvalue = "";
+   array.reduce((acc,cv)=>{
+      acc + cv;
+      return cb(acc);
+
+   },initialvalue);
 }
 
-map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'AryaArya']
+let output = map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'AryaArya']
+console.log(output);
 ```
 
 3. Implement `filter` array method using Array.reduce
