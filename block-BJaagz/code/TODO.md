@@ -6,16 +6,18 @@
 
 ```js
 function forEach(num,cb) {
-   num.reduce((acc,cv)=> {
-        
-   },initialvalue);
+   num.reduce((acc,cv,i,arr)=> {
+       // forEach doesn't return anything 
+       cb(cv,i,arr);
+      //  console.log(acc); - output will be sam
+   });
 }
 
 forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
   console.log(name + name, i, arr)
 );
 ```
-
+// array.reduce rule if initial value is not passed then index 0 value will become initial value and passed to acc .
 
 2. Implement `map` array method using Array.reduce
 
@@ -26,12 +28,10 @@ forEach(['Sam', 'Jon', 'Arya'], (name, i, arr) =>
 ```js
 function map(array,cb) {
   // Your code goes here
-  let initialvalue = "";
-   array.reduce((acc,cv)=>{
-      acc + cv;
-      return cb(acc);
-
-   },initialvalue);
+  return array.reduce((acc,cv,i,arr)=>{
+        acc.push(cb(cv,i,arr));
+        return acc;
+   },[]);
 }
 
 let output = map(['Sam', 'Jon', 'Arya'], (name) => name + name); // ['SamSam', 'JonJon', 'AryaArya']
@@ -45,8 +45,14 @@ console.log(output);
 - It should work exactly like array `filter` method
 
 ```js
-function filter() {
+function filter(array,cb) {
   // Your code goes here
+  return array.reduce((acc,cv,i,arr) => {
+      if(cb(cv,i,arr)){
+            acc.push(cv);       
+      }
+       return acc;
+  },[])
 }
 filter(['Sam', 'Jon', 'Arya'], (name) =>
   name.startsWith('S')
