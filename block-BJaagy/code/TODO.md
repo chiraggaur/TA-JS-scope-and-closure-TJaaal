@@ -1,6 +1,30 @@
 1. Create a function by your choice that accepts a callback function.
 
+function numberOfOtyPurchases(amount,cb){
+
+  return `Number of Book purchased ${cb(amount)}`;
+
+}
+
+function divideby10 (n){
+      return Math.floor(n/10);
+}
+
+numberOfOtyPurchases(50,divideby10);
+
 2. Create a function by you choice that returns a function reference.
+
+function numberOfOtyPurchases(amount,cb){
+
+  return  cb;
+
+}
+
+function divideby10 (n){
+      return Math.floor(n/10);
+}
+
+console.log(numberOfOtyPurchases(50,divideby10));
 
 3. Create a higher order function called `map` that takes two inputs:
    - An array of numbers/string/boolean etc
@@ -10,6 +34,12 @@ Have `map` return a new array filled with values that are the result of the 'cal
 
 ```js
 // Your code goes here
+function map(numbers,cb){
+   return numbers.map(  (elm) => {
+    return cb(elm);
+
+   });
+}
 
 // Test Your Code
 function multiplyByTwo(n) {
@@ -20,10 +50,16 @@ multiplyByTwo(1); //-> 2
 multiplyByTwo(2); //-> 4
 ```
 
-4. Create a higher-order function called `forEach` taht takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
+4. Create a higher-order function called `forEach` that takes an array and a callback, and runs the callback on each element of the array. `forEach` does not return anything.
 
 ```js
 // Your code goes here
+
+function forEach(array,cb){
+   array.forEach((elm)=>{
+      cb(elm);
+  })
+}
 
 // Test Your Code
 let alphabet = '';
@@ -38,6 +74,13 @@ console.log(alphabet); //prints 'abcd'
 
 ```js
 // Test Your Code
+function filter(array,cb){
+  return  array.filter((elm) => {
+       if(cb(elm)){
+          return elm;
+       }
+  })
+}
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
