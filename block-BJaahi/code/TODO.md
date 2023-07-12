@@ -253,6 +253,8 @@ let sum = test(100);
 function add(a, b) {
   return a + b;
 }
+
+console.log("finished");
 ```
 
 <!-- Answer -->
@@ -260,3 +262,4 @@ function add(a, b) {
 ```js
 // Your code goes here
 ```
+
