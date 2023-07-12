@@ -10,15 +10,24 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
+function loop(start,test,update) {
   // Your code goes here
+   let updated = start;
+   function body (){
+    if(test(start)){
+     console.log(updated);
+       updated =  update(updated);  
+  }
+
+   }  body();
+
+   
 }
 
 loop(
   3,
   (n) => n > 0,
-  (n) => n - 1,
-  console.log
+  (n) => n - 1
 );
 // → 3
 // → 2
