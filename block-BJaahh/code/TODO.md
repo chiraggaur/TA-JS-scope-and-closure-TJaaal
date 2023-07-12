@@ -92,8 +92,11 @@ cricket(); // Your score of Cricket is 2
 function getCard(suit) {
   // your code goes here
   return ()=>{
-
-    return Math.floor(Math.random.Number("2","3","4","5","6","7","8","9","10","J","Q", "K", "A")). concat(suit);
+    let numbersList = [2,3,4,5,6,7,8,9,10,"J", "Q", "K","A"];
+    function randomNumber{
+      return   Math.floor(Math.random() * numberList.length); // doubt 
+    }
+       return `Card is: ${numberList[randomNumber()]} ${suit}`;
   }
 }
 
