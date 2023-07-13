@@ -3,6 +3,7 @@
 ```js
 function once(cb) {
   // your code goes here
+    return  cb();
 }
 
 // TEST
@@ -11,20 +12,21 @@ function sayHello() {
 }
 let log = once(sayHello);
 log(); // alert message "You can only call me once!"
-log(); // return undefinde (can't be called twice)
+log(); // return undefinde (can't be called twice) // how to set for only one call // doubt
 ```
 
 2. Change the above function in such a way that the function accepts two parameter a callback function and parameter for the callback function. When calling the function pass the parameters.
 
 ```js
-function once(cb) {
+function once(cb,param) {
   // your code goes here
+  return cb(param);
 }
 
 // TEST
 let log = once(console.log, 'Hello Console');
 log(); // log message "Hello Console"
-log(); // return undefinde (can't be called twice)
+log(); // return undefinde (can't be called twice) // how to set for only one call // doubt
 ```
 
 3. Change the above function in such a way that it can accept `n` number of parameters for the callback function.
@@ -34,8 +36,9 @@ log(); // return undefinde (can't be called twice)
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
 
 ```js
-function once(cb) {
+function once(cb,...param) {
   // your code goes here
+  return cb(param.join(' '));
 }
 
 // TEST
